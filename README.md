@@ -36,7 +36,20 @@ Claude Code picks it up automatically. It triggers on design and user-research r
 
 Measured with `claude plugin eval` on 8 cases (6 should-fire, 2 should-not-fire), 3 runs per arm, Sonnet as judge. Each case compares Claude with the skill against Claude without it:
 
-<!-- EVAL_TABLE -->
+**Pilot run** (1 run per arm, 2026-10-26). The full 3-run results will replace this table.
+
+| Case | With skill | Without | Δ |
+|---|---|---|---|
+| 01 new product, "how do I start?" | 1.00 | 0.67 | +0.33 |
+| 02 write an interview guide | 1.00 | 0.20 | **+0.80** |
+| 03 critique a bad guide | 0.67 | 0.67 | 0.00 → closed-question lint added after the pilot |
+| 04 review an affinity diagram | 1.00 | 1.00 | 0.00 |
+| 05 personas + storyboard | 0.60 | 0.60 | 0.00 → composite-persona rule added after the pilot |
+| 06 redesign a confusing flow | 1.00 | 0.50 | +0.50 |
+| 07 plain code task (must not fire) | 1.00 | 1.00 | no false trigger |
+| 08 agent-interface task (must not fire) | 1.00 | 1.00 | no false trigger |
+
+Mean Δ +0.20. The biggest gains are in interview-guide quality and in planning usability tests.
 
 ## What's inside
 
